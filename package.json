@@ -1,0 +1,12 @@
+{
+  "name": "ai-trading-research-assistant",
+  "version": "1.0.0",
+  "description": "Mini prototype: turns a natural-language trading question into a structured, testable experiment.",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

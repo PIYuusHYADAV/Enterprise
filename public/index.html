@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AI Trading Research Assistant — Mini Prototype</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>AI Trading Research Assistant</h1>
+      <p class="subtitle">Question &rarr; Experiment &rarr; Evidence &rarr; Learning</p>
+      <div id="source-badge" class="source-badge"></div>
+    </header>
+
+    <div class="stepper">
+      <span class="step active" data-step="ask">1. Ask</span>
+      <span class="step" data-step="clarify">2. Clarify</span>
+      <span class="step" data-step="define">3. Define</span>
+      <span class="step" data-step="learn">4. Learn</span>
+    </div>
+
+    <!-- STEP 1: ASK -->
+    <section id="ask-section" class="panel">
+      <label for="question">Ask a trading question in plain English</label>
+      <textarea id="question" rows="3" placeholder="e.g. Does buying NIFTY after a sharp fall work better during high-volatility periods?"></textarea>
+      <button id="ask-btn">Analyze question</button>
+      <div class="example">Try: "Does buying NIFTY after a 1% fall work better during high-volatility periods?"</div>
+    </section>
+
+    <!-- STEP 2: CLARIFY -->
+    <section id="clarify-section" class="panel hidden">
+      <h2>A few things are unclear</h2>
+      <p class="muted">The system won't guess at these silently — please confirm or fill them in.</p>
+      <div id="assumptions-box" class="notice"></div>
+      <form id="clarify-form"></form>
+      <button id="clarify-btn">Confirm & build experiment</button>
+    </section>
+
+    <!-- STEP 3: DEFINE -->
+    <section id="define-section" class="panel hidden">
+      <h2>Structured Experiment</h2>
+      <div id="experiment-box" class="experiment-card"></div>
+      <button id="test-btn">Run test on sample data</button>
+    </section>
+
+    <!-- STEP 4: LEARN -->
+    <section id="learn-section" class="panel hidden">
+      <h2>Result</h2>
+      <div id="learn-box"></div>
+      <button id="restart-btn">Start a new question</button>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
